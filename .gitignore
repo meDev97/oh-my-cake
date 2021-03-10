@@ -5,6 +5,10 @@
 /.pnp
 .pnp.js
 
+#data
+/src/firebase/seed.js
+/src/firebase/config.js
+
 # testing
 /coverage
 
