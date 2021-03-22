@@ -2,10 +2,11 @@ import styled from "styled-components";
 import { primary, white } from "../../../constants/colors";
 
 export const Container = styled.div`
-  width: 200px;
+  width:250px;
+  margin:2rem;
 `;
 export const Image = styled.div`
-  width: 200px;
+
 `;
 export const Content = styled.div`
   padding: 1rem;

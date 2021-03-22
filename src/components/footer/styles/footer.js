@@ -64,6 +64,10 @@ export const Submit = styled.input`
   color: #fff;
   margin-left: -4rem;
   cursor: pointer;
+  transition:.7s;
+  &:hover{
+    box-shadow:0px 2px 4px 1px grey;
+  }
 `;
 export const Phone = styled.p``;
 export const Location = styled.p`

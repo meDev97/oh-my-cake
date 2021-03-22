@@ -8,7 +8,6 @@ class Firebase{
     constructor(){
         app.initializeApp(firebaseConfig);
         this.firestore= app.firestore()
-
     }
 }
 const firebase= new Firebase();

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Cake from "../cake";
 import Title from "../title";
 import imgCake from "../../images/cake.jpeg";
@@ -9,8 +9,24 @@ import {
   Base,
   BtnLink,
 } from "./styles/chooseCakes";
+import firebase  from "../../firebase/firebase";
 
 function ChooseCakes() {
+  const [cakes, setCakes] = useState([])
+  useEffect(() => {
+    firebase.firestore.collection('cakes').get().then(snap=>{
+      console.log(snap.docs);
+      const cakes = snap.docs.slice(0,8).map(cake=>{
+        return {
+          id: cake.id,
+          ...cake.data()
+        }
+      })
+      setCakes([...cakes])
+    })
+    .catch(err=>console.log(err))
+    return ()=>firebase.firestore.collection('cakes');
+  }, [])
   return (
     <Container>
       <Base>
@@ -23,12 +39,12 @@ function ChooseCakes() {
       </Base>
 
       <Items>
-        <Cake imgCake={imgCake} title="coconut" price="2.3" />
-        <Cake imgCake={imgCake} title="vanilla" price="2.8" />
-        <Cake imgCake={imgCake} title="peach" price="3.5" />
-        <Cake imgCake={imgCake} title="coconut" price="2.3" />
+        {cakes.length > 0 ? cakes.map(cake=>(
+          <Cake key={cake.id} imgCake={cake.image} title={cake.description} price={cake.price} />
+        )) : 'spinner'}
+        
       </Items>
-      <BtnLink>more cakes</BtnLink>
+      <BtnLink to='/catalog'>more cakes</BtnLink>
     </Container>
   );
 }

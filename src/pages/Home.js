@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import About from "../components/about";
 import ChooseCakes from "../components/chooseCakes";
 import ChooseFlowers from "../components/chooseFlowers";
 import DoubleImgs from "../components/DoubleImgs";
 import Payment from "../components/payment";
+import  firebase  from "../firebase/firebase";
+import { seed } from "../firebase/seed";
 import imgR from "../images/download.jpg";
 import imgL from "../images/imageRight.jpg";
 function Home() {
+/*   useEffect(() => {
+    seed(firebase)
+  }, []) */
   return (
     <>
       <DoubleImgs

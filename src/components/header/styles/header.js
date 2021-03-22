@@ -45,8 +45,9 @@ export const List = styled(NavLink)`
     transform: scaleX(1);
   }
 `;
-export const Cart = styled.div`
+export const CartItems = styled.div`
   margin-left: auto;
+  cursor: pointer;
   svg {
     font-size: 2rem;
   }
