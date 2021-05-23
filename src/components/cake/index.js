@@ -1,23 +1,35 @@
 import React from 'react'
 import { AiOutlineShoppingCart,AiOutlinePlus } from 'react-icons/ai'
+import { connect } from 'react-redux'
 import {Container,Image,Content,InfoCake,Name,Price,Cart,Plus,Icons} from './styles/cake'
-function Cake(props) {
-    const {imgCake,title,price}= props
+import {setAddCake} from '../../redux/cakes/cakesActions'
+import {editBox} from '../../redux/box/boxActions'
+function Cake({cake,setAddCake,cart,box,editBox}) {
+    const {image,title,price}= cake
+    const addCake=(item)=>{
+
+        setAddCake(item)
+
+    }
     return (
         <Container>
-            <Image><img src={imgCake} /></Image>
+            <Image><img src={image} loading='lazy' alt='cake'/></Image>
             <Content>
                 <InfoCake>
                     <Name>{title}</Name>
                     <Price>$ {price}</Price>
                 </InfoCake>
                 <Icons>
-                    <Cart><AiOutlineShoppingCart/></Cart>
-                    <Plus><AiOutlinePlus/></Plus>
+                    {cart && <Cart><AiOutlineShoppingCart/></Cart>}
+                    <Plus onClick={()=>addCake(cake)} ><AiOutlinePlus/></Plus>
                 </Icons>
             </Content>
         </Container>
     )
 }
-
-export default Cake
+const mapStateToProps = (state)=>{
+    return {
+        box : state.boxes.editBox,
+    }
+  }
+export default connect(mapStateToProps,{setAddCake,editBox})(Cake)

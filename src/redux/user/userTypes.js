@@ -1,0 +1,1 @@
+export const SET_CURRENTUSER = 'SET_CURRENTUSER';

@@ -36,12 +36,7 @@ export const Title_section = styled.div`
   grid-row: 1 / 2;
   padding: 0 70px;
 `;
-export const Location = styled.div`
-  position: absolute;
-`;
-export const Media = styled.div`
-  position: absolute;
-`;
+
 export const Info = styled.div`
   grid-row: 4 / 6;
   padding: 4rem;

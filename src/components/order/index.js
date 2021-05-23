@@ -1,18 +1,21 @@
 import React from 'react'
 import { AiOutlineMinusCircle, AiOutlinePlusCircle } from 'react-icons/ai'
 import { MdDeleteForever } from 'react-icons/md'
-import {Container,Name,Qte,IconLeft,IconRight,Num,Price,Delete} from './styles/order'
-function Order() {
+import {Container,Name,Qte,IconLeft,IconRight,Num,Price,Delete,PriceDelete} from './styles/order'
+function Order({qte,name,price,handlerDelete,qteNum,addQteHandler,removeQteHandler}) {
+
     return (
         <Container>
-            <Name>banana</Name>
-            <Qte>
-                <IconLeft><AiOutlinePlusCircle/></IconLeft>
-                <Num>1</Num>
-                <IconRight><AiOutlineMinusCircle/></IconRight>
-            </Qte>
-            <Price>$85</Price>
-            <Delete><MdDeleteForever/></Delete>
+            <Name>{name}</Name>
+            {!qte && <Qte>
+                <IconLeft onClick={removeQteHandler}><AiOutlineMinusCircle/></IconLeft>
+                <Num>{qteNum}</Num>
+                <IconRight onClick={addQteHandler}>< AiOutlinePlusCircle/></IconRight>
+            </Qte>}
+            <PriceDelete>
+            <Price>${price*qteNum}</Price>
+            <Delete onClick={handlerDelete}><MdDeleteForever/></Delete>
+            </PriceDelete>
         </Container>
     )
 }

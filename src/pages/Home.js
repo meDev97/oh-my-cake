@@ -3,6 +3,7 @@ import About from "../components/about";
 import ChooseCakes from "../components/chooseCakes";
 import ChooseFlowers from "../components/chooseFlowers";
 import DoubleImgs from "../components/DoubleImgs";
+import IconsInfo from "../components/iconsInfo";
 import Payment from "../components/payment";
 import  firebase  from "../firebase/firebase";
 import { seed } from "../firebase/seed";
@@ -19,8 +20,13 @@ function Home() {
         title="own production of cakes"
         btn="go to selection"
         imgR={imgR}
-        para="Loremkjh fdgdfg dfgdfgfd fgfdgf fdgfdgfd gfdfgfd gfdgdfg sdkjhd sdkhfkjh sdkjhfjh sdjfhkjhdsfkjh"
-      />
+        para="you don't need a special accosion to order cakes. we will  bring them at any time"
+      >
+        <IconsInfo>
+          <IconsInfo.Location/>
+          <IconsInfo.Media/>
+        </IconsInfo>
+      </DoubleImgs>
       {/* section choose cackes  */}
       <ChooseCakes />
 
@@ -29,7 +35,7 @@ function Home() {
         title="pick up your box of cakes"
         btn="pick up the box"
         imgR={imgR}
-        para="Loremkjh fdgdfg dfgdfgfd fgfdgf fdgfdgfd gfdfgfd gfdgdfg sdkjhd sdkhfkjh sdkjhfjh sdjfhkjhdsfkjh"
+        para="choose 4 , 6 or 9 absolutely any cakes we will pack them in a box and deliver it to you . we can also add flowers and a card to the order."
       />
 
       {/* section a bit about us  */}
@@ -43,7 +49,7 @@ function Home() {
         title="did not find your cake ?"
         btn="send request"
         imgR={imgR}
-        para="Loremkjh fdgdfg dfgdfgfd fgfdgf fdgfdgfd gfdfgfd gfdgdfg sdkjhd sdkhfkjh sdkjhfjh sdjfhkjhdsfkjh"
+        para="you don't need a special accosion to order cakes. we will  bring them at any time"
       />
 
       {/* section delevery and payment  */}

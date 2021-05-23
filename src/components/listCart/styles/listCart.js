@@ -57,13 +57,15 @@ export const Icon =styled.div`
         color:${primary};
 
     }
+`
+export const Edit =styled(Icon)`
 
 `
 export const Buttons =styled.div`
     display:flex;
     justify-content:flex-end;
 `
-export const Btn =styled(Link)`
+export const Btn =styled.button`
 font-size:1.4rem;
 display:block;
 margin-left:2rem;
@@ -79,4 +81,10 @@ transition:.7s;
 &:hover{
     box-shadow:0px 2px 4px 1px grey;
 }
+`
+export const EditOrder =styled.div`
+    padding:3rem 1rem;
+    border-left:2px solid #e8e8e8;
+    margin-left:2rem;
+
 `

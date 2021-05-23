@@ -15,7 +15,6 @@ function ChooseCakes() {
   const [cakes, setCakes] = useState([])
   useEffect(() => {
     firebase.firestore.collection('cakes').get().then(snap=>{
-      console.log(snap.docs);
       const cakes = snap.docs.slice(0,8).map(cake=>{
         return {
           id: cake.id,
@@ -40,7 +39,7 @@ function ChooseCakes() {
 
       <Items>
         {cakes.length > 0 ? cakes.map(cake=>(
-          <Cake key={cake.id} imgCake={cake.image} title={cake.description} price={cake.price} />
+          <Cake key={cake.id} cake={cake} cart/>
         )) : 'spinner'}
         
       </Items>

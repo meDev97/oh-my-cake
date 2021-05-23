@@ -14,7 +14,7 @@ import { FaShippingFast } from "react-icons/fa";
 import { GiReceiveMoney, GiCakeSlice } from "react-icons/gi";
 function About() {
   return (
-    <Container>
+    <Container id='about'>
       <Title>A bit about us</Title>
       <Text>
         oh, my Cake is a modern bakery that makes cakes. peis, pastries and

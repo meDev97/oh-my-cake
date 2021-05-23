@@ -1,19 +1,10 @@
 import React from "react";
-import {
-  GrLocation,
-  GrPhone,
-  GrTwitter,
-  GrFacebook,
-  GrInstagram,
-} from "react-icons/gr";
 import Title from "../title";
 import {
   ContainerFluid,
   Container,
   Image_left,
   Image_right,
-  Location,
-  Media,
   Text,
   Btn,
   Info,
@@ -21,7 +12,7 @@ import {
 } from "./styles/doubleimgs";
 import { secondary } from "../../constants/colors";
 function DoubleImgs(props) {
-  const { imgL, title, imgR, btn, para, icons } = props;
+  const { imgL, title, imgR, btn, para, icons,children } = props;
   return (
     <div style={{ backgroundColor: secondary }}>
       <ContainerFluid>
@@ -32,12 +23,7 @@ function DoubleImgs(props) {
           <Image_left>
             <img src={imgL} />
           </Image_left>
-          {icons && (
-            <Location>
-              <GrLocation />
-              <GrPhone />
-            </Location>
-          )}
+
           <Image_right>
             <img src={imgR} />
           </Image_right>
@@ -45,13 +31,7 @@ function DoubleImgs(props) {
             <Text>{para}</Text>
             <Btn>{btn}</Btn>
           </Info>
-          {icons && (
-            <Media>
-              <GrTwitter />
-              <GrFacebook />
-              <GrInstagram />
-            </Media>
-          )}
+          {children}
         </Container>
       </ContainerFluid>
     </div>

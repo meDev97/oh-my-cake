@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
 import { primary, secondary, white } from "../../../constants/colors";
 
@@ -53,7 +54,6 @@ export const Icon =styled.div`
     }
 `
 export const Btn =styled.button`
-
 font-size:1.4rem;
 display:block;
 padding:1.2rem 2.5rem;

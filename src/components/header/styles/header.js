@@ -50,5 +50,6 @@ export const CartItems = styled.div`
   cursor: pointer;
   svg {
     font-size: 2rem;
+    margin-left:2rem;
   }
 `;

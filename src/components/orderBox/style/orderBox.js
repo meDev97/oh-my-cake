@@ -1,10 +1,9 @@
-import { Link } from "react-router-dom"
 import styled from "styled-components"
 import { primary, white } from "../../../constants/colors"
 
 export const Container=styled.aside`
 padding: 2rem;
-
+min-width:30rem;
 `
 export const Title=styled.h3`
     font-size: 1.6rem;
@@ -29,10 +28,12 @@ export const Num=styled.span`
     cursor: pointer;
     line-height:25px;
     transition:.7s;
-    &:hover{
+    &:hover {
         background-color:${primary};
         color:${white}
     }
+    background-color:${props=>props.active ? primary :'transparent' };
+    color:${props=>props.active ? white :primary };
 `
 export const Check=styled.div`
 padding:1rem 0;
@@ -56,15 +57,15 @@ export const TotalOrder=styled.div`
     align-items:center;
     margin-top:2rem;
 `
-export const Btn=styled(Link)`
+export const Btn=styled.button`
 font-size:1.4rem;
 display:block;
 padding:1.2rem 1.5rem;
 margin-left:4rem;
-border:none;
+border:${props=> props.color ? '1px solid '+ primary : 'none'};
 border-radius:50px;
-color:${white};
-background-color:${primary};
+color:${props=> props.color ? primary : white};
+background-color:${props=> props.color ? 'transparent' : primary};
 outline:none;
 margin-top:1.5rem;
 cursor: pointer;
@@ -72,5 +73,21 @@ transition:.7s;
 &:hover{
     box-shadow:0px 2px 4px 1px grey;
 }
+&:disabled{
+    cursor:no-drop;
+}
+
+`
+export const Error=styled.p`
+    font-size:1.2rem;
+    color:red;
+    margin-top:2rem;
+
+`
+export const Edit=styled.div`
+    margin-top:1rem;
+    display:flex;
+    justify-content:space-evenly;
+    align-items:cemter;
 
 `

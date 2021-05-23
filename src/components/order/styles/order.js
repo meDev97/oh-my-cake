@@ -14,7 +14,7 @@ export const Name = styled.div`
     text-transform:capitalize;
     opacity:.7;
 `
-export const Qte = styled.p`
+export const Qte = styled.div`
     display:flex;
 `
 export const IconLeft = styled.div`
@@ -48,6 +48,7 @@ opacity:.7;
 export const Price = styled.p`
 font-size:1.2rem;
 opacity:.7;
+margin-right:3rem;
 `
 export const Delete = styled.div`
     cursor: pointer;
@@ -60,4 +61,8 @@ export const Delete = styled.div`
     &:hover{
         opacity:1;
     }
+`
+export const PriceDelete = styled.div`
+    display:flex;
+    align-items:center;
 `
