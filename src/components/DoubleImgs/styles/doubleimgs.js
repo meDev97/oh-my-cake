@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { primary, secondary, white } from "../../../constants/colors";
+import { primary, white } from "../../../constants/colors";
 
 export const ContainerFluid = styled.section`
   width: 95%;
@@ -20,19 +20,19 @@ export const Container = styled.section`
   grid-column-gap: 5%;
   padding: 6rem 0;
 `;
-export const Image_left = styled.div`
+export const ImageLeft = styled.div`
   grid-row: 2 / 6;
   img {
     height: 100%;
   }
 `;
-export const Image_right = styled.div`
+export const ImageRight = styled.div`
   grid-row: 1 / 4;
   img {
     height: 100%;
   }
 `;
-export const Title_section = styled.div`
+export const TitleSection = styled.div`
   grid-row: 1 / 2;
   padding: 0 70px;
 `;

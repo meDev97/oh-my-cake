@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Cake from "../cake";
 import Title from "../title";
-import imgCake from "../../images/cake.jpeg";
 import {
   Container,
   SubTitle,
@@ -9,23 +8,27 @@ import {
   Base,
   BtnLink,
 } from "./styles/chooseCakes";
-import firebase  from "../../firebase/firebase";
+import firebase from "../../firebase/firebase";
+import Loading from "../Loading";
 
 function ChooseCakes() {
-  const [cakes, setCakes] = useState([])
+  const [cakes, setCakes] = useState([]);
   useEffect(() => {
-    firebase.firestore.collection('cakes').get().then(snap=>{
-      const cakes = snap.docs.slice(0,8).map(cake=>{
-        return {
-          id: cake.id,
-          ...cake.data()
-        }
+    firebase.firestore
+      .collection("cakes")
+      .get()
+      .then((snap) => {
+        const cakes = snap.docs.slice(0, 4).map((cake) => {
+          return {
+            id: cake.id,
+            ...cake.data(),
+          };
+        });
+        setCakes([...cakes]);
       })
-      setCakes([...cakes])
-    })
-    .catch(err=>console.log(err))
-    return ()=>firebase.firestore.collection('cakes');
-  }, [])
+      .catch((err) => console.log(err));
+    return () => firebase.firestore.collection("cakes");
+  }, []);
   return (
     <Container>
       <Base>
@@ -38,12 +41,13 @@ function ChooseCakes() {
       </Base>
 
       <Items>
-        {cakes.length > 0 ? cakes.map(cake=>(
-          <Cake key={cake.id} cake={cake} cart/>
-        )) : 'spinner'}
-        
+        {cakes.length > 0 ? (
+          cakes.map((cake) => <Cake key={cake.id} cake={cake} cart />)
+        ) : (
+          <Loading />
+        )}
       </Items>
-      <BtnLink to='/catalog'>more cakes</BtnLink>
+      <BtnLink to="/catalog">more cakes</BtnLink>
     </Container>
   );
 }

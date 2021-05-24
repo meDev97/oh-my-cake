@@ -28,16 +28,16 @@ function Payment() {
       </Text>
       <Pay>
         <Img>
-          <img src={visa} />
+          <img src={visa} alt="visa" />
         </Img>
         <Img>
-          <img src={master} />
+          <img src={master} alt="master" />
         </Img>
         <Img>
-          <img src={payonner} />
+          <img src={payonner} alt="payonner" />
         </Img>
         <Img>
-          <img src={paypal} />
+          <img src={paypal} alt="paypal" />
         </Img>
       </Pay>
     </Container>

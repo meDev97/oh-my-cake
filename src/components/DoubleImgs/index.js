@@ -1,32 +1,33 @@
 import React from "react";
+import { secondary } from "../../constants/colors";
 import Title from "../title";
 import {
   ContainerFluid,
   Container,
-  Image_left,
-  Image_right,
+  ImageLeft,
+  ImageRight,
   Text,
   Btn,
   Info,
-  Title_section,
+  TitleSection,
 } from "./styles/doubleimgs";
-import { secondary } from "../../constants/colors";
+
 function DoubleImgs(props) {
-  const { imgL, title, imgR, btn, para, icons,children } = props;
+  const { imgL, title, imgR, btn, para, children } = props;
   return (
     <div style={{ backgroundColor: secondary }}>
       <ContainerFluid>
         <Container>
-          <Title_section>
+          <TitleSection>
             <Title>{title}</Title>
-          </Title_section>
-          <Image_left>
-            <img src={imgL} />
-          </Image_left>
+          </TitleSection>
+          <ImageLeft>
+            <img src={imgL} alt="background-img" />
+          </ImageLeft>
 
-          <Image_right>
-            <img src={imgR} />
-          </Image_right>
+          <ImageRight>
+            <img src={imgR} alt="background-img" />
+          </ImageRight>
           <Info>
             <Text>{para}</Text>
             <Btn>{btn}</Btn>

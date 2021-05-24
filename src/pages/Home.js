@@ -1,18 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import About from "../components/about";
 import ChooseCakes from "../components/chooseCakes";
 import ChooseFlowers from "../components/chooseFlowers";
 import DoubleImgs from "../components/DoubleImgs";
 import IconsInfo from "../components/iconsInfo";
 import Payment from "../components/payment";
-import  firebase  from "../firebase/firebase";
-import { seed } from "../firebase/seed";
+
 import imgR from "../images/download.jpg";
 import imgL from "../images/imageRight.jpg";
 function Home() {
-/*   useEffect(() => {
-    seed(firebase)
-  }, []) */
   return (
     <>
       <DoubleImgs
@@ -23,8 +19,8 @@ function Home() {
         para="you don't need a special accosion to order cakes. we will  bring them at any time"
       >
         <IconsInfo>
-          <IconsInfo.Location/>
-          <IconsInfo.Media/>
+          <IconsInfo.Location />
+          <IconsInfo.Media />
         </IconsInfo>
       </DoubleImgs>
       {/* section choose cackes  */}
