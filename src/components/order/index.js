@@ -29,7 +29,7 @@ function Order({
           <IconLeft onClick={removeQteHandler}>
             <AiOutlineMinusCircle />
           </IconLeft>
-          <Num>{qteNum.toFixed(2)}</Num>
+          <Num>{qteNum}</Num>
           <IconRight onClick={addQteHandler}>
             <AiOutlinePlusCircle />
           </IconRight>
