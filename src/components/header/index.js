@@ -1,6 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Container, Logo, Nav, CartItems, List } from "./styles/header";
+import {
+  Container,
+  Logo,
+  Nav,
+  NavMobile,
+  CartItems,
+  List,
+  ListMobile,
+  Menu,
+  Line,
+  Back,
+} from "./styles/header";
 import LogoImg from "../../images/logo-cake.png";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FaRegUserCircle } from "react-icons/fa";
@@ -9,6 +20,7 @@ import Cart from "../cart";
 import { connect } from "react-redux";
 import firebase from "../../firebase";
 function Header({ currentUser }) {
+  const [toggleNav, setToggleNav] = useState(false);
   const [showCart, setShowCart] = useState(false);
   const [boxes, setBoxes] = useState([]);
   const localBoxes = localStorage.getItem("boxes");
@@ -52,18 +64,26 @@ function Header({ currentUser }) {
         </Link>
       </Logo>
       <Nav>
-        <List activeClassName="active" to="/catalog">
-          Catalog
-        </List>
-        <List activeClassName="active" to="/about">
-          About
-        </List>
-        <List activeClassName="active" to="/delivery">
-          Delivery and payment
-        </List>
-        <List activeClassName="active" to="/contacts">
-          Contacts
-        </List>
+        <li>
+          <List activeClassName="active" to="/catalog">
+            Catalog
+          </List>
+        </li>
+        <li>
+          <List activeClassName="active" to="/about">
+            About
+          </List>
+        </li>
+        <li>
+          <List activeClassName="active" to="/delivery">
+            Delivery and payment
+          </List>
+        </li>
+        <li>
+          <List activeClassName="active" to="/contacts">
+            Contacts
+          </List>
+        </li>
       </Nav>
       <CartItems>
         {currentUser ? (
@@ -89,6 +109,36 @@ function Header({ currentUser }) {
               ))
             : "add a box"}
         </Cart>
+      )}
+      <Menu onClick={() => setToggleNav((prev) => !prev)}>
+        <Line />
+        <Line />
+        <Line />
+      </Menu>
+      {toggleNav && (
+        <NavMobile>
+          <Back onClick={() => setToggleNav(false)}>X</Back>
+          <li onClick={() => setToggleNav(false)}>
+            <ListMobile activeClassName="active" to="/catalog">
+              Catalog
+            </ListMobile>
+          </li>
+          <li onClick={() => setToggleNav(false)}>
+            <ListMobile activeClassName="active" to="/about">
+              About
+            </ListMobile>
+          </li>
+          <li onClick={() => setToggleNav(false)}>
+            <ListMobile activeClassName="active" to="/delivery">
+              Delivery and payment
+            </ListMobile>
+          </li>
+          <li onClick={() => setToggleNav(false)}>
+            <ListMobile activeClassName="active" to="/contacts">
+              Contacts
+            </ListMobile>
+          </li>
+        </NavMobile>
       )}
     </Container>
   );

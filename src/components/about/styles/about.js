@@ -48,6 +48,7 @@ export const Types = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 `;
 export const Type = styled.div`
   position: relative;
@@ -61,10 +62,25 @@ export const Item = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
   svg {
     font-size: 5rem;
     color: ${primary};
     opacity: 0.8;
+  }
+  @media (max-width: 768px) {
+    width: 7rem;
+    height: 7rem;
+    svg {
+      font-size: 4rem;
+    }
+  }
+  @media (max-width: 418px) {
+    width: 5rem;
+    height: 5rem;
+    svg {
+      font-size: 3rem;
+    }
   }
 `;
 export const Line = styled.div`
@@ -74,8 +90,16 @@ export const Line = styled.div`
 `;
 export const TextItem = styled(Text)`
   position: absolute;
-  bottom: -1rem;
+  /* bottom: -2rem; */
+  top: 70%;
+  width: 120%;
   left: 50%;
-  width: 200%;
   transform: translateX(-50%);
+  @media (max-width: 618px) {
+    font-size: 15px;
+  }
+  @media (max-width: 418px) {
+    font-size: 12px;
+    width: 100%;
+  }
 `;

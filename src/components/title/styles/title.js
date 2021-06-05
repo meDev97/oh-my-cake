@@ -9,4 +9,7 @@ export const TitleSection = styled.h2`
   &::first-letter {
     text-transform: uppercase;
   }
+  @media (max-width: 768px) {
+    font-size: 2.7rem;
+  }
 `;

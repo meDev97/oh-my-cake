@@ -5,12 +5,14 @@ export const Container = styled.div`
   position: absolute;
   right: 0;
   top: 100%;
-  width: 350px;
+  max-width: 350px;
+  width: 90%;
   max-height: 100vh;
   overflow-y: auto;
   box-shadow: 0px 2px 4px 1px #e0dbd4;
   background-color: ${white};
   padding: 3rem 1rem;
+  z-index: 9999;
 `;
 export const Items = styled.div``;
 export const Item = styled.div`

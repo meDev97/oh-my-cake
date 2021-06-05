@@ -3,7 +3,7 @@ import { primary } from "../../../constants/colors";
 
 export const Box = styled.div`
   width: 230px;
-  margin: 3rem 0;
+  margin: 3rem;
 `;
 export const Img = styled.div`
   border-radius: 2px;

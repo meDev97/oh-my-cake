@@ -6,11 +6,15 @@ export const Container = styled.footer`
   color: ${primary};
   font-size: 1.5rem;
   max-width: 1200px;
+
   margin: 0 auto;
-  padding: 3rem 0;
+  padding: 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 600px) {
+    display: block;
+  }
 `;
 export const NavBar = styled.div``;
 export const Media = styled.div``;
@@ -52,7 +56,10 @@ export const Input = styled.input`
   outline: none;
   border: 1px solid ${primary};
   color: ${primary};
-  width: 300px;
+  width: 300px; 
+  @media (max-width: 500px) {
+    width: 100%;
+    
 `;
 export const Submit = styled.input`
   border-radius: 5rem;
@@ -64,9 +71,12 @@ export const Submit = styled.input`
   color: #fff;
   margin-left: -4rem;
   cursor: pointer;
-  transition:.7s;
-  &:hover{
-    box-shadow:0px 2px 4px 1px grey;
+  transition: 0.7s;
+  &:hover {
+    box-shadow: 0px 2px 4px 1px grey;
+  }
+  @media (max-width: 500px) {
+    margin: 2rem auto;
   }
 `;
 export const Phone = styled.p``;

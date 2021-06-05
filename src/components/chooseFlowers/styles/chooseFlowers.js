@@ -22,6 +22,7 @@ export const Text = styled.p`
 
 export const Items = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 `;

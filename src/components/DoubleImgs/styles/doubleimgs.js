@@ -19,22 +19,34 @@ export const Container = styled.section`
   grid-template-columns: 40% 55%;
   grid-column-gap: 5%;
   padding: 6rem 0;
+  @media (max-width: 768px) {
+    display: block;
+  }
 `;
 export const ImageLeft = styled.div`
   grid-row: 2 / 6;
   img {
     height: 100%;
+    object-fit: cover;
+  }
+  @media (max-width: 768px) {
+    height: 400px;
   }
 `;
 export const ImageRight = styled.div`
   grid-row: 1 / 4;
   img {
+    object-fit: cover;
     height: 100%;
+  }
+  @media (max-width: 768px) {
+    display: none;
   }
 `;
 export const TitleSection = styled.div`
   grid-row: 1 / 2;
   padding: 0 70px;
+  margin-bottom: 20px;
 `;
 
 export const Info = styled.div`

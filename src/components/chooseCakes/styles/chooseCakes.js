@@ -27,6 +27,10 @@ export const Items = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
 `;
 export const BtnLink = styled(Link)`
   display: block;
